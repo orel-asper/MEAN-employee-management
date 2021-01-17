@@ -1,0 +1,34 @@
+<!-- <div *ngFor="let employee of employeelist">
+<h1>{{employee | json}}</h1>
+</div> -->
+
+<div class="container">
+    <p></p>
+    <table class="table">
+        <thead class="table">
+            <tr>
+                <td scope="col">ID</td>
+                <td scope="col">Name</td>
+                <td scope="col">Email</td>
+                <td scope="col">Designation</td>
+                <td scope="col">Phone Number</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeelist; let i = index">
+                <th scope="row">{{employee._id}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.phoneNumber}}</td>
+                <td><button class="btn btn-danger" (click)="onDelete(employee._id)">delete</button></td>
+                <td><button class="btn btn-success" [routerLink]="['/edit-employee', employee._id]">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary" routerLink="/create-employee">Add Employee</button>
+    </div>
+</div>

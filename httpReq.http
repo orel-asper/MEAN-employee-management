@@ -1,0 +1,35 @@
+###
+POST  http://localhost:3000/api/create
+content-type: application/json
+
+ {
+"name": "victoria",
+"email": "victoria@gmail.com",
+"designation": "ADMIN",
+"phoneNumber": "93449530555"
+ }
+###
+GET  http://localhost:3000/api/
+
+###
+GET http://localhost:3000/api/read/5ff5daad0a3b916fd4cacc2b
+content-type: application/json
+###
+
+PUT  http://localhost:3000/api/update/5ff5daad0a3b916fd4cacc2b
+content-type: application/json
+
+ {
+"name": "victoria ziat",
+"email": "victoria@gmail.com",
+"designation": "USER",
+"phoneNumber": "0548999326"
+ }
+
+###
+
+DELETE http://localhost:3000/api/delete/5ff5db710a3b916fd4cacc2d
+
+
+
+

@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <div class=" card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-3">Edit Employee</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="exampleInputName">Name</label>
+                        <input type="text" class="form-control" id="Name" placeholder="Enter Name"
+                            formControlName="name">
+                    </div>
+                    <!-- --------------error--------------- -->
+                    <div class="alert alert-warning"
+                        *ngIf="editForm.controls.name.touched && editForm.controls.name.invalid">
+                        Invalid Name
+                    </div>
+                    <!-- --------------end error--------------- -->
+                    <!-- --------------------------------------------------------------------- -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
+                            placeholder="Enter email" formControlName="email">
+                    </div>
+                    <!-- --------------error--------------- -->
+                    <div class="alert alert-warning"
+                        *ngIf="editForm.controls.email.touched && editForm.controls.email.invalid">
+                        Invalid Email
+                    </div>
+                    <!-- --------------end error--------------- -->
+                    <!-- --------------------------------------------------------------------- -->
+                    <div class="form-group">
+                        <label for="Designation">Designation</label><br />
+                        <select class="form-select" aria-label="Default select example" formControlName="designation">
+                            <option *ngFor="let d of EmployeeProfile" [value]="d">{{d}}</option>
+                        </select>
+                    </div>
+                    <!-- --------------error--------------- -->
+                    <div class="alert alert-warning"
+                        *ngIf="editForm.controls.designation.touched && editForm.controls.designation.invalid">
+                        Invalid Designation
+                    </div>
+                    <!-- --------------end error--------------- -->
+                    <!-- --------------------------------------------------------------------- -->
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="number" class="form-control" id="PhoneNumber" aria-describedby="emailHelp"
+                            placeholder="Enter Phone Number" formControlName="phoneNumber">
+                    </div>
+                    <!-- --------------error--------------- -->
+                    <div class="alert alert-warning"
+                        *ngIf="editForm.controls.phoneNumber.touched && editForm.controls.phoneNumber.invalid">
+                        Invalid Phone Number
+                    </div>
+                    <!-- --------------end error--------------- -->
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-primary">Add</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-secondary" routerLink="/list-employee">Go back</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
